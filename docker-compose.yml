@@ -1,0 +1,17 @@
+version: "3"
+services:
+  intel:
+    image: ubuntu:22.04
+    platform: linux/amd64
+    ports:
+      - "10080:10080"
+    depends_on:
+      - riscv
+    tty: true
+
+  riscv:
+    image: riscv64/ubuntu:22.04
+    platform: linux/riscv64
+    ports:
+      - "10081:10081"
+    tty: true
