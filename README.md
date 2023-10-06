@@ -23,12 +23,18 @@ compute.cとcompute.pyを同じディレクトリに置き、以下のコマン�
 python3 compute.py
 ```
 
+compute.cはgccでコンパイルする
+```
+gcc compute.c
+mv a.out compute
+```
+
 事前に、以下のコマンドを実行しておく
 ```
 pip3 install fastapi uvicorn
 ```
 
-RISC-VのfastapiはRustを使っているため、Rustをインストールする必要がある
+RISC-VのfastapiはRustを使っているため、Rustをインストールする必要がある（個別にビルドが必要なpipモジュールがあった）
 ```
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```

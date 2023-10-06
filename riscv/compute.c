@@ -8,7 +8,7 @@ void cvtpi16_ps(__m128 *dst, __m64 a)
 {
     for (int j = 0; j < 4; j++)
     {
-        (*dst)[j] = (float)a[j];
+        (*dst)[3 - j] = (float)a[j];
     }
 }
 
@@ -21,6 +21,6 @@ int main()
     __m128 output;
     cvtpi16_ps(&output, input);
 
-    printf("%f %f %f %f\n", output[3], output[2], output[1], output[0]);
+    printf("%f %f %f %f\n", output[0], output[1], output[2], output[3]);
     return 0;
 }
